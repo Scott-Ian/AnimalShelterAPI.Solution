@@ -14,7 +14,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 
-namespace MessageBoard
+namespace AnimalShelterAPI
 {
   public class Startup
   {
