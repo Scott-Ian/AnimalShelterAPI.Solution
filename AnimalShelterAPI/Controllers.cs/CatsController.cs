@@ -41,6 +41,7 @@ namespace AnimalShelterAPI.Controllers
       return cat;
     }
 
+    // http://localhost:5000/api/Cats/Search/searchString?searchString=D
     //GET api/Cats/Search
     [HttpGet("Search/searchString")]
     public async Task<ActionResult<IEnumerable<Cat>>> GetSearch([FromQuery] string searchString, [FromQuery] PaginationFilter pagination)
