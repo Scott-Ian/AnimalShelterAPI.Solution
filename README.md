@@ -29,18 +29,36 @@ __
 
 ## Route Documentation
 
-| Behavior    | Input | Output |
-| :---------- | ----- | -----: |
-| Program can create a stylist object | none | none |
-| Stylist object holds stylist name and details | none | none |
-| Program can retrieve a list of all stylists | none | list |
-| Program can show details of stylist | none | details |
-| Program can create a Client object | none | none |
-| Stylist => Client reflects one to many relationship | none | none |
-| Client object holds client name and phone number | none | none |
-| Program can retrieve a list of all clients related to a particular stylist | none | list |
+_The base route for this API: http://localhost:5000/_
+
+Routes and endpoints for both Cats and Dogs are the same. For brevity, only one example has been provided below. Be aware any of these endpoints will work by replacing "Dogs" with "Cats." Please refer to the Swagger documentation for more in depth information.  
+
+### HTTP Requests
+
+| Request Type  | Route |
+| :---------- | -----: |
+| GET| /api/Dogs| 
+| POST | /api/Dogs| 
+| GET | /api/Dogs/{id}|
+|Get| /api/Dogs/Search{searchString}
+|Get| /api/Dogs/Random/ 
+| PUT | /api/Dogs/{id}| 
+| DELETE| /api/Dogs/{id}| 
 
 __
+
+### Path Parameters
+
+| Parameter   | Type | Default | Required | Description |
+| :---------- | ----- | ----- |----- |-----: |
+|name | string | none | false | Searches list of Cats or Dogs by Name |
+|pageSize | int | 10 | false | Sets total number of results to be returned. Maximum of 50 |
+|pageNumber | int | 1 | false | Paginates the results, only providing the results from pageNumber * pageSize |
+
+### Example Queries
+ * http://localhost:5000/api/Cats?PageNumber=2&PageSize=1
+ * http://localhost:5000/api/Dogs/Search?searchString=Denise
+
 
 ## Swagger Documentation
 
@@ -66,7 +84,7 @@ _There are currently no known bugs, however with the current pagination implemen
 
 ## Support and contact details
 
-Contact : Megan Hepner
+Contact : Ian Scott IanScottDeveloper@gmail.com
 
 ## Technologies Used
 
