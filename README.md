@@ -29,10 +29,6 @@ __
 
 ## Route Documentation
 
-For a more in-depth look at the API documentation please refer to the Swagger documentation.
-  * Once the program is running, access the swagger documentation by visiting the following address:
-    http://localhost:5000/swagger/index.html#/
-
 | Behavior    | Input | Output |
 | :---------- | ----- | -----: |
 | Program can create a stylist object | none | none |
@@ -44,8 +40,20 @@ For a more in-depth look at the API documentation please refer to the Swagger do
 | Client object holds client name and phone number | none | none |
 | Program can retrieve a list of all clients related to a particular stylist | none | list |
 
+
+
+## Swagger Documentation
+
+For a more in-depth look at the API documentation please refer to the Swagger documentation.
+  * Once the program is running, access the swagger documentation by visiting the following address:
+    http://localhost:5000/swagger/index.html#/
+
+
 ## Note on Pagination
 
+This API returns a default number of 10 results per page. 
+
+To increase this value, or to 
 
 
 
