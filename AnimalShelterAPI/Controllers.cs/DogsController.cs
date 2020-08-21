@@ -41,6 +41,16 @@ namespace AnimalShelterAPI.Controllers
       return dog;
     }
 
+    //Get api/Dogs/random
+    [HttpGet("Random")]
+    public async Task<ActionResult<Dog>> GetRandom ()
+    {
+      Random random = new Random();
+      var dogs = await _db.Dogs.ToListAsync();
+      Dog dog = dogs.ElementAt(random.Next(0, dogs.Count()));
+      return dog;
+    }
+
     // POST api/Dogs
     [HttpPost]
     public void Post([FromBody] Dog dog)
