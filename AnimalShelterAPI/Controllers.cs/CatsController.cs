@@ -41,6 +41,19 @@ namespace AnimalShelterAPI.Controllers
       return cat;
     }
 
+    //GET api/Cats/Search
+    [HttpGet("Search/searchString")]
+    public async Task<ActionResult<IEnumerable<Cat>>> GetSearch([FromQuery] string searchString, [FromQuery] PaginationFilter pagination)
+    {
+      var cats = await _db.Cats
+      .Where(c => c.Name.Contains(searchString))
+      .Skip((pagination.PageNumber -1) * pagination.PageSize)
+      .Take(pagination.PageSize)
+      .ToListAsync();
+
+      return cats;
+    }
+
     //Get api/Cats/random
     [HttpGet("Random")]
     public async Task<ActionResult<Cat>> GetRandom ()
