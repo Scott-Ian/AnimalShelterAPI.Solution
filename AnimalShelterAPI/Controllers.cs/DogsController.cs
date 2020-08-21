@@ -34,7 +34,7 @@ namespace AnimalShelterAPI.Controllers
     }
 
     //GET api/Dogs/3 - Get for specific Dog
-    [HttpGet("DogId")]
+    [HttpGet("{DogId}")]
     public async Task<ActionResult<Dog>> GetAction(int DogId)
     {
       Dog dog = await _db.Dogs.FirstOrDefaultAsync(d => d.DogId == DogId);
