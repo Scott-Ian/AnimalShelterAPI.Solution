@@ -19,7 +19,9 @@ namespace AnimalShelterAPI.Controllers
       _db = db;
     }
 
-    // GET api/Dogs
+    //GET api/Dogs
+    //http://localhost:5000/api/Dogs?PageNumber=2
+    //http://localhost:5000/api/Dogs?PageNumber=2&PageSize=1
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Dog>>> Get ([FromQuery] PaginationFilter pagination)
     {

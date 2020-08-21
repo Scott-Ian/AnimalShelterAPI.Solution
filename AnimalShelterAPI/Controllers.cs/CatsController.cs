@@ -20,6 +20,8 @@ namespace AnimalShelterAPI.Controllers
     }
 
     // GET api/Cats
+    //http://localhost:5000/api/Cats?PageNumber=2
+    //http://localhost:5000/api/Cats?PageNumber=2&PageSize=1
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Cat>>> Get ([FromQuery] PaginationFilter pagination)
     {
