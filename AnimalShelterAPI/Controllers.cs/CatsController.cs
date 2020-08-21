@@ -19,6 +19,7 @@ namespace AnimalShelterAPI.Controllers
       _db = db;
     }
 
+    // GET api/Cats
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Cat>>> Get ([FromQuery] PaginationFilter pagination)
     {
@@ -30,11 +31,20 @@ namespace AnimalShelterAPI.Controllers
       return cats;
     }
 
+    //GET api/Cats/5 - Get for specific Cat
     [HttpGet("CatId")]
     public async Task<ActionResult<Cat>> GetAction(int CatId)
     {
       Cat cat = await _db.Cats.FirstOrDefaultAsync(c => c.CatId == CatId);
       return cat;
+    }
+
+    // POST api/Cats
+    [HttpPost]
+    public void Post([FromBody] Cat cat)
+    {
+      _db.Cats.Add(cat);
+      _db.SaveChanges();
     }
   }
 }
