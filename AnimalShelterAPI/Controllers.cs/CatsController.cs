@@ -19,6 +19,15 @@ namespace AnimalShelterAPI.Controllers
       _db = db;
     }
 
-    
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<Cat>>> Get ([FromQuery] PaginationFilter pagination)
+    {
+      var cats = await _db.Cats
+      .Skip((pagination.PageNumber -1) * pagination.PageSize)
+      .Take(pagination.PageSize)
+      .ToListAsync();
+      
+      return cats;
+    }
   }
 }
