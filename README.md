@@ -89,8 +89,10 @@ Contact : Ian Scott IanScottDeveloper@gmail.com
 ## Technologies Used
 
 * C#
-* ASP.NET MVC
+* ASP.NET API
 * Entity
+* LINQ
+* MySQL Database
 
 
 ## **📘 License**
