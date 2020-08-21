@@ -40,7 +40,7 @@ Routes and endpoints for both Cats and Dogs are the same. For brevity, only one 
 | GET| /api/Dogs| 
 | POST | /api/Dogs| 
 | GET | /api/Dogs/{id}|
-|Get| /api/Dogs/Search{searchString}
+|Get| /api/Dogs/Search?{searchString}
 |Get| /api/Dogs/Random/ 
 | PUT | /api/Dogs/{id}| 
 | DELETE| /api/Dogs/{id}| 
@@ -58,6 +58,25 @@ __
 ### Example Queries
  * http://localhost:5000/api/Cats?PageNumber=2&PageSize=1
  * http://localhost:5000/api/Dogs/Search?searchString=Denise
+
+__
+
+ ### Sample JSON Response
+```
+ {
+        "dogId": 227248,
+        "name": "Penny",
+        "breed": "American Pit Bull - Australian Shepherd",
+        "sex": 1,
+        "coloring": "White Brown",
+        "age": 1.9,
+        "weight": 52.1,
+        "personality": 1,
+        "about": "A true HomeBuddy! Knows many tricks and is a quick learner!",
+        "adopted": false,
+        "adoptionDate": "0001-01-01T00:00:00"
+    }
+```
 
 
 ## Swagger Documentation
