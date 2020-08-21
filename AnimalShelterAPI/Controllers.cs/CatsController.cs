@@ -46,5 +46,14 @@ namespace AnimalShelterAPI.Controllers
       _db.Cats.Add(cat);
       _db.SaveChanges();
     }
+
+    //PUT api/cats/5
+    [HttpPut("{id}")]
+    public void Put(int id, [FromBody] Cat cat)
+    {
+      cat.CatId = id;
+      _db.Entry(cat).State = EntityState.Modified;
+      _db.SaveChanges();
+    }
   }
 }
