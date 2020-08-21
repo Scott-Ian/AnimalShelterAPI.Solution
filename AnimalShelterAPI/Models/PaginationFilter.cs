@@ -20,7 +20,7 @@ namespace AnimalShelterAPI.Models
       {
         pageSize = 10;
       }
-      
+
       this.PageNumber = pageNumber;
       this.PageSize = pageSize;
     }
