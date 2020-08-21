@@ -26,8 +26,15 @@ namespace AnimalShelterAPI.Controllers
       .Skip((pagination.PageNumber -1) * pagination.PageSize)
       .Take(pagination.PageSize)
       .ToListAsync();
-      
+
       return cats;
+    }
+
+    [HttpGet("CatId")]
+    public async Task<ActionResult<Cat>> GetAction(int CatId)
+    {
+      Cat cat = await _db.Cats.FirstOrDefaultAsync(c => c.CatId == CatId);
+      return cat;
     }
   }
 }
